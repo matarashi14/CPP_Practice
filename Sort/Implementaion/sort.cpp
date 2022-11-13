@@ -18,12 +18,17 @@ Sort::Sort(int size)
     }
 }
 
+bool Sort::isEmpty()
+{
+    return this->vec.empty();
+}
+
 int Sort::randNum(int min, int max)
 {
     return rand() % (max - min) + min;
 }
 
-int Sort::min()
+int Sort::getMin()
 {
     int m{MAX_VAL + 1};
 
@@ -36,7 +41,7 @@ int Sort::min()
     return m;
 }
 
-int Sort::max()
+int Sort::getMax()
 {
     int M{MIN_VAL - 1};
 
@@ -72,9 +77,7 @@ void Sort::countingSort(int place)
     }
 
     for (unsigned long j = 0; j < vec.size(); j++)
-    {
         vec[j] = output[j];
-    }
 
     delete[] count;
     delete[] output;
@@ -82,7 +85,7 @@ void Sort::countingSort(int place)
 
 void Sort::radixSort()
 {
-    int max = this->max();
+    int max = this->getMax();
 
     for (int place = 1; max / place > 0; place *= 10)
     {

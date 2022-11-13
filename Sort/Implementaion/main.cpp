@@ -12,7 +12,7 @@ int main()
     std::cout << s1;
     std::cout << s2;
 
-    std::cout << "Max is " << s2.max() << ": Min is " << s2.min() << std::endl;
+    std::cout << "Max is " << s2.getMax() << ": Min is " << s2.getMin() << std::endl;
 
     s2.radixSort();
 

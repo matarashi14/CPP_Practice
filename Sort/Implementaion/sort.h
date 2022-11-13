@@ -10,12 +10,13 @@ public:
     Sort();
     Sort(int size);
 
+    bool isEmpty();
     void mergeSort();
     void quickSort();
     void radixSort();
     void shaffle();
-    int min();
-    int max();
+    int getMin();
+    int getMax();
 
     friend bool &operator==(const Sort &, const Sort &);
     friend std::ostream &operator<<(std::ostream &, const Sort &);
